@@ -29,6 +29,7 @@ public class OnlinePurchaseManager
       if(getMaker(purchases.get(i)).equals(getMaker(purchases.get(i + 1)))){
         if(isElectronic(purchases.get(i)) == isElectronic(purchases.get(i + 1))){
           return true;
+        }
       }
     }
       return false;
