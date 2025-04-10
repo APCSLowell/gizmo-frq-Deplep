@@ -11,7 +11,13 @@ public class OnlinePurchaseManager
   */
   public int countElectronicsByMaker(String maker)
   {
-    /* to be implemented in part (a) */
+    int count = 0;
+    for(int i = 0; i < purchases.size(); i ++){
+      if(getMaker(purchases.get(i)).equals(maker) && isElectronic(purchases.get(i))){
+        count ++;
+      }
+    }
+    return count;
   }
   
   /** Returns true if any pair of adjacent purchased Gizmo objects are
@@ -19,7 +25,13 @@ public class OnlinePurchaseManager
   */
   public boolean hasAdjacentEqualPair()
   {
-    /* to be implemented in part (b) */
+    for(int i = 0; i < purchases.size() - 1; i ++){
+      if(getMaker(purchases.get(i)).equals(getMaker(purchases.get(i + 1)))){
+        if(isElectronic(purchases.get(i)).equals(isElectronic(purchases.get(i + 1)))){
+          return true;
+      }
+    }
+      return false;
   }
   public OnlinePurchaseManager()
   {
